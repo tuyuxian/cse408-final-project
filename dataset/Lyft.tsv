@@ -1,6 +1,6 @@
-tag	data
+tag	text
 0	The Scope of This Policy
-0	"This policy applies to all Lyft users, including Riders and Drivers (including Driver applicants), and to all Lyft platforms and services, including our apps, websites, features, and other services (collectively, the ìLyft Platformî). "
+0	"This policy applies to all Lyft users, including Riders and Drivers (including Driver applicants), and to all Lyft platforms and services, including our apps, websites, features, and other services (collectively, the ‚ÄúLyft Platform‚Äù). "
 0	The Information We Collect
 0	"When you use the Lyft Platform, we collect the information you provide, usage information, and information about your device. "
 0	"We also collect information about you from other sources like third-party services, and optional programs in which you participate, which we may combine with other information we have about you."
@@ -10,7 +10,7 @@ tag	data
 0	"When you create an account with Lyft, we collect the information you provide us, such as your name, email address, phone number, birth date, and payment information. "
 0	"You may choose to share additional info with us for your Rider profile, like your photo or saved addresses (e.g., home or work), and set up other preferences (such as your preferred pronouns)."
 0	Driver Information. 
-0	"If you apply to be a Driver, we will collect the information you provide in your application, including your name, email address, phone number, birth date, profile photo, physical address, government identification number (such as social security number), driverís license information, vehicle information, and car insurance information."
+0	"If you apply to be a Driver, we will collect the information you provide in your application, including your name, email address, phone number, birth date, profile photo, physical address, government identification number (such as social security number), driver‚Äôs license information, vehicle information, and car insurance information."
 0	"We collect the payment information you provide us, including your bank routing numbers, and tax information. Depending on where you want to drive, we may also ask for additional business license or permit information or other information to manage driving and programs relevant to that location. "
 0	"We may need additional information from you at some point after you become a Driver, including information to confirm your identity (like a photo)."
 0	Ratings and Feedback. 
@@ -21,22 +21,22 @@ tag	data
 0	Location Information. 
 0	Great rides start with an easy and accurate pickup. 
 0	The Lyft Platform collects location information (including GPS and WiFi data) differently depending on your Lyft app settings and device permissions as well as whether you are using the platform as a Rider or Driver:
-0	"Riders: We collect your deviceís precise location when you open and use the Lyft app, including while the app is running in the background from the time you request a ride until it ends. Lyft also tracks the precise location of scooters and e-bikes at all times."
-0	"Drivers: We collect your deviceís precise location when you open and use the app, including while the app is running in the background when it is in driver mode. "
+0	"Riders: We collect your device‚Äôs precise location when you open and use the Lyft app, including while the app is running in the background from the time you request a ride until it ends. Lyft also tracks the precise location of scooters and e-bikes at all times."
+0	"Drivers: We collect your device‚Äôs precise location when you open and use the app, including while the app is running in the background when it is in driver mode. "
 0	"We also collect precise location for a limited time after you exit driver mode in order to detect ride incidents, and continue collecting it until a reported or detected incident is no longer active."
 0	Usage Information.
 0	"We collect information about your use of the Lyft Platform, including ride information like the date, time, destination, distance, route, payment, and whether you used a promotional or referral code. "
 0	"We also collect information about your interactions with the Lyft Platform like our apps and websites, including the pages and content you view and the dates and times of your use."
 0	Device Information. 
-0	" We collect information about the devices you use to access the Lyft Platform, including device model, IP address, type of browser, version of operating system, identity of carrier and manufacturer, radio type (such as 4G), preferences and settings (such as preferred language), application installations, device identifiers, advertising identifiers, and push notification tokens. "
+0	"We collect information about the devices you use to access the Lyft Platform, including device model, IP address, type of browser, version of operating system, identity of carrier and manufacturer, radio type (such as 4G), preferences and settings (such as preferred language), application installations, device identifiers, advertising identifiers, and push notification tokens."
 0	"If you are a Driver, we also collect mobile sensor data from your device (such as speed, direction, height, acceleration, deceleration, and other technical data)."
 0	Communications Between Riders and Drivers.
-0	We work with a third party to facilitate phone calls and text messages between Riders and Drivers without sharing either partyís actual phone number with the other.
-0	"But while we use a third party to provide the communication service, we collect information about these communications, including the participantsí phone numbers, the date and time, and the contents of SMS messages."
+0	We work with a third party to facilitate phone calls and text messages between Riders and Drivers without sharing either party‚Äôs actual phone number with the other.
+0	"But while we use a third party to provide the communication service, we collect information about these communications, including the participants‚Äô phone numbers, the date and time, and the contents of SMS messages."
 0	Address Book Contacts. 
 0	"You may set your device permissions to grant Lyft access to your contact lists and direct Lyft to access your contact list, for example to help you refer friends to Lyft. If you do this, we will access and store the names and contact information of the people in your address book."
 0	"Cookies, Analytics, and Third-Party Technologies. "
-0	"We collect information through the use of ìcookiesî, tracking pixels, data analytics tools like Google Analytics, SDKs, and other third-party technologies to understand how you navigate through the Lyft Platform and interact with Lyft advertisements, to make your Lyft experience safer, to learn what content is popular, to improve your site experience, to serve you better ads on other sites, and to save your preferences. "
+0	"We collect information through the use of ‚Äúcookies‚Äù, tracking pixels, data analytics tools like Google Analytics, SDKs, and other third-party technologies to understand how you navigate through the Lyft Platform and interact with Lyft advertisements, to make your Lyft experience safer, to learn what content is popular, to improve your site experience, to serve you better ads on other sites, and to save your preferences. "
 0	Cookies are small text files that web servers place on your device; they are designed to store basic information and to help websites and apps recognize your browser. 
 0	C. Information We Collect from Third Parties
 0	Third-Party Services. 
@@ -85,12 +85,12 @@ tag	data
 0	"To make the Lyft Platform work, we may need to share your personal information with other users, third parties, and service providers. "
 0	This section explains when and why we share your information.
 0	A. Sharing Between Lyft Users
-0	"Rider information shared with Driver: Upon receiving a ride request, we share with the Driver the Riderís pickup location, name, profile photo, rating, Rider statistics (like approximate number of rides and years as a Rider), and information the Rider includes in their Rider profile (like preferred pronouns)."
-0	"Upon pickup and during the ride, we share with the Driver the Riderís destination and any additional stops the Rider inputs into the Lyft app. "
-0	"Once the ride is finished, we also eventually share the Riderís rating and feedback with the Driver. "
+0	"Rider information shared with Driver: Upon receiving a ride request, we share with the Driver the Rider‚Äôs pickup location, name, profile photo, rating, Rider statistics (like approximate number of rides and years as a Rider), and information the Rider includes in their Rider profile (like preferred pronouns)."
+0	"Upon pickup and during the ride, we share with the Driver the Rider‚Äôs destination and any additional stops the Rider inputs into the Lyft app. "
+0	"Once the ride is finished, we also eventually share the Rider‚Äôs rating and feedback with the Driver. "
 1	B. Sharing With Third-Party Service Providers for Business Purposes
-1	"Depending on whether youíre a Rider or a Driver, Lyft may share the following categories of your personal information for a business purpose (as we have done for the preceding 12 months) to provide you with a variety of the Lyft Platformís features and services:"
-1	"Personal identifiers, such as your name, address, email address, phone number, date of birth, government identification number (such as social security number), driverís license information, vehicle information, and car insurance information;"
+1	"Depending on whether you‚Äôre a Rider or a Driver, Lyft may share the following categories of your personal information for a business purpose (as we have done for the preceding 12 months) to provide you with a variety of the Lyft Platform‚Äôs features and services:"
+1	"Personal identifiers, such as your name, address, email address, phone number, date of birth, government identification number (such as social security number), driver‚Äôs license information, vehicle information, and car insurance information;"
 1	"Financial information, such as bank routing numbers, tax information, and any other payment information you provide us;"
 1	"Internet or other electronic network activity information, such as your IP address, type of browser, version of operating system, carrier and/or manufacturer, device identifiers, and mobile advertising identifiers; and"
 1	"Commercial information, such as ride information, Driver/Rider statistics and feedback, and Driver/Rider transaction history;"
