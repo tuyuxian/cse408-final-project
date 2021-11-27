@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <title>CSE 408 Demo</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body style="background-color:rgba(109, 107, 105, 0.123);">
@@ -83,10 +84,11 @@
 
     .bar output {
       position: fixed;
-      top: 17%;
+      top: 10%;
       height: auto;
       padding: 100px 0;
       text-align: center;
+      font-size: 24px;
     }
 
     .col #result {
@@ -132,14 +134,13 @@
 
   <div class="bar">
     <p>Level of Filters (Between 30% and 100%):</p><br>
-    <input type="range" id="vol" name="vol" value="30" min="30" max="100" step="10"
-      oninput="this.nextElementSibling.value = this.value">
-    <output>30</output>
+    <input type="range" id="myRange" value="30" min="30" max="100" step="10">
+    <output id="rangeValue">30</output>
   </div>
 
   <div class="row">
     <div class="col">
-      <textarea id=article type='text' name='article'>
+      <textarea id='article' type='text' name='article'>
         {% if article %}
         {{ article }}
       {% endif %}
@@ -151,7 +152,20 @@
     </div>
 
   </div>
-
+  <script>
+    $('#myRange').mousemove(function(){
+      console.log($('#myRange').val())
+        percent = $('#myRange').val()
+        $('#rangeValue').text(percent+'%');
+        
+        // 這邊去filter article by percent
+        // _article from last page
+        // percent from input
+        $('#article').text(percent+'%'+_article);
+    });
+    var _article = article.defaultValue
+    console.log(_article)
+  </script>
 
 
   <style>
@@ -182,5 +196,4 @@
 </body>
 <footer class="footer">Group 12: Shiue-Fu Tzeng, Shun-Wen Hsiao, Yu-Hsien Tu, Yi-An Chen
 </footer>
-
 </html>
