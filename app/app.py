@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 from model import Predictor
-
+from unit_test import UnitTest
 app = Flask(__name__)
 
 
@@ -15,19 +15,20 @@ def article():
 
 
 @app.route('/analysis', methods=['GET'])
-def analysis(input=None):
-    print('input', input)
-    return render_template('Analysis.html', article=str(input))
+def analysis(text):
+    #print('input', text)
+    return render_template('Analysis.html', article=text)
 
 
 @app.route("/post_submit", methods=['GET', 'POST'])
 def submit():
     if request.method == 'POST':
-        # TODO: do analysis from bert, and then pass to analysis page
-        res = request.form.get('article')
-        res = Predictor(res)
-        res = res.predict()
-        return analysis(res)
+        res = request.form.get('text-to-detect')
+        # res = Predictor(res)
+        # res = res.predict()
+        # return analysis(res)
+        res = UnitTest()
+        return analysis(res.sentence_output)
 
 
 if __name__ == '__main__':

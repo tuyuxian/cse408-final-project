@@ -80,8 +80,10 @@ class Predictor(object):
     def predict(self):
         """
         Implements the predictions
-
-        :rtype: List[List[str, float, float]]
+        The first float is the probability of being tagged as 0.
+        The Second float is the probability of being tagged as 1.
+        The str is the orginal text.
+        :rtype: List[List[float, float, str]]
         """
         _input = self.sentence
         contract = InputText(_input)
@@ -94,5 +96,5 @@ class Predictor(object):
 
         result = []
         for i in range(len(sentence)):
-            result.append([sentence[i], prob[i][0], prob[i][1]])
+            result.append([prob[i][0], prob[i][1], sentence[i]])
         return result

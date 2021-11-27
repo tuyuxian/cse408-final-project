@@ -1,15 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <title>Analysis Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <title>CSE 408 Demo</title>
 </head>
-<body>
 
-<h1>Analysis Page</h1>
-{% if article %}
-  <p>{{ article }}</p>
-{% endif %}
-<p><a href="{{ url_for('article') }}">jump to article</a></p>
+<body style="background-color:rgba(109, 107, 105, 0.123);">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark ">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">CSE 408 Group 12
+        </a>
+      </li>
+    </ul>
+  </nav>
 
+  <style type="text/css">
+    .footer {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: black;
+      font-size: 24px;
+      font-weight: 400;
+      position: fixed;
+      text-align: center;
+      bottom: 0px;
+      width: 100%;
+      height: auto;
+      background-color: rgb(164, 164, 170);
+    }
+
+    .center {
+      padding: 200px 0;
+      text-align: center;
+    }
+
+    .bar {
+      width: 100vw;
+      position: relative;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+    }
+
+    nav a {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 24px;
+    }
+
+    h1 {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 48px;
+      position: fixed;
+      top: 20%;
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      left: 50%;
+      padding: 25px;
+    }
+
+    .bar p {
+      color: rgba(126, 126, 131, 0.925);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 24px;
+      position: fixed;
+      top: 20%;
+      height: auto;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .bar input {
+      position: fixed;
+      top: 15%;
+      height: auto;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .bar output {
+      position: fixed;
+      top: 17%;
+      height: auto;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .col #result {
+      color: black;
+      width: 500px;
+      height: 450px;
+      position: fixed;
+      top: 40%;
+      left: 54%;
+      padding: 25px;
+      border: 1px solid #2b2c2b;
+      resize: none;
+      border-radius: 10px;
+      -webkit-transform: translate(-10%, -0%);
+      -moz-transform: translate(-10%, -0%);
+      -o-transform: translate(-10%, -0%);
+      transform: translate(0%, -0%);
+      box-sizing: border-box;
+    }
+
+    .col #article {
+      color: black;
+      width: 500px;
+      height: 450px;
+      position: fixed;
+      top: 40%;
+      left: 15%;
+      padding: 25px;
+      border: 1px solid #2b2c2b;
+      resize: none;
+      border-radius: 10px;
+      -webkit-transform: translate(-10%, -0%);
+      -moz-transform: translate(-10%, -0%);
+      -o-transform: translate(-10%, -0%);
+      transform: translate(0%, -0%);
+      box-sizing: border-box;
+    }
+  </style>
+
+  <div>
+    <h1 class="text-center display-4" id="title">Analysis</h1>
+  </div>
+
+  <div class="bar">
+    <p>Level of Filters (Between 30% and 100%):</p><br>
+    <input type="range" id="vol" name="vol" value="30" min="30" max="100" step="10"
+      oninput="this.nextElementSibling.value = this.value">
+    <output>30</output>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <textarea id=article type='text' name='article'>
+        {% if article %}
+        {{ article }}
+      {% endif %}
+        </textarea>
+    </div>
+    <div class="col">
+      <textarea id=result type='text' name='result'>
+        </textarea>
+    </div>
+
+  </div>
+
+
+
+  <style>
+    .footer {
+      color: black;
+      font-size: 24px;
+      font-weight: 400;
+      position: fixed;
+      text-align: center;
+      bottom: 0px;
+      width: 100%;
+      height: auto;
+      background-color: rgb(164, 164, 170);
+    }
+
+    .center {
+      padding: 200px 0;
+      text-align: center;
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+    crossorigin="anonymous"></script>
 </body>
+<footer class="footer">Group 12: Shiue-Fu Tzeng, Shun-Wen Hsiao, Yu-Hsien Tu, Yi-An Chen
+</footer>
+
 </html>
