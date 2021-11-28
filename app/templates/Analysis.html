@@ -39,7 +39,7 @@
 
     .bar {
       width: 100vw;
-      position: relative;
+      position: fixed;
       display: flex;
       flex-flow: column wrap;
       align-items: center;
@@ -60,7 +60,6 @@
       -o-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       left: 50%;
-      padding: 25px;
     }
 
     .bar p {
@@ -82,34 +81,34 @@
       text-align: center;
     }
 
-    .bar output {
-      position: fixed;
-      top: 10%;
+    /* .bar output {
+      position: absolute;
+      top: 13%;
       height: auto;
       padding: 100px 0;
       text-align: center;
       font-size: 24px;
-    }
+    } */
 
     .col #result {
       color: black;
-      width: 500px;
-      height: 450px;
+      width: 1000px;
+      height: 500px;
       position: fixed;
-      top: 40%;
-      left: 54%;
+      top: 60%;
+      left: 50%;
       padding: 25px;
       border: 1px solid #2b2c2b;
       resize: none;
       border-radius: 10px;
-      -webkit-transform: translate(-10%, -0%);
-      -moz-transform: translate(-10%, -0%);
-      -o-transform: translate(-10%, -0%);
-      transform: translate(0%, -0%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
       box-sizing: border-box;
     }
 
-    .col #article {
+    .col #article_input {
       color: black;
       width: 500px;
       height: 450px;
@@ -128,23 +127,26 @@
     }
   </style>
 
-  <div>
-    <h1 class="text-center display-4" id="title">Analysis</h1>
-  </div>
-
-  <div class="bar">
-    <p>Level of Filters (Between 30% and 100%):</p><br>
-    <input type="range" id="myRange" value="30" min="30" max="100" step="10">
-    <output id="rangeValue">30</output>
-  </div>
-
   <div class="row">
     <div class="col">
-      <textarea id='article' type='text' name='article'>
+      <h1 class="text-center display-4" id="title">Analysis</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="bar">
+        <p>Level of Filters (<output id="rangeValue">50%</output>)</p><br>
+        <input type="range" id="myRange" value="50" min="0" max="100" step="10">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <!-- <textarea id='article_input' type='text' name='article_input'>
         {% if article %}
-        {{ article }}
+        {{ article}}
       {% endif %}
-        </textarea>
+      </textarea> -->
     </div>
     <div class="col">
       <textarea id=result type='text' name='result'>
@@ -153,40 +155,32 @@
 
   </div>
   <script>
-    $('#myRange').mousemove(function(){
+    $('#myRange').mousemove(function () {
       console.log($('#myRange').val())
-        percent = $('#myRange').val()
-        $('#rangeValue').text(percent+'%');
-        
-        // 這邊去filter article by percent
-        // _article from last page
-        // percent from input
-        $('#article').text(percent+'%'+_article);
+      percent = $('#myRange').val()
+      $('#rangeValue').text(percent + '%');
+      var output = ""
+      for (let i = 0; i < _article.length; i++) {
+        if (_article[i][1] > percent / 100) {
+          var tmp = " * " + _article[i][2] + "\n" + "\n";
+          output += tmp;
+        }
+
+      }
+
+      // filter article by percent
+      // _article from last page
+      // percent from input
+      $('#result').text(output);
+
+      console.log('output', output)
     });
-    var _article = article.defaultValue
-    console.log(_article)
+    var _article = JSON.parse('{{ article.result | tojson}}')
+    var output = []
+    for (let i = 0; i < _article.length; i++) {
+      output.push(_article[i])
+    }
   </script>
-
-
-  <style>
-    .footer {
-      color: black;
-      font-size: 24px;
-      font-weight: 400;
-      position: fixed;
-      text-align: center;
-      bottom: 0px;
-      width: 100%;
-      height: auto;
-      background-color: rgb(164, 164, 170);
-    }
-
-    .center {
-      padding: 200px 0;
-      text-align: center;
-    }
-  </style>
-
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
@@ -196,4 +190,5 @@
 </body>
 <footer class="footer">Group 12: Shiue-Fu Tzeng, Shun-Wen Hsiao, Yu-Hsien Tu, Yi-An Chen
 </footer>
+
 </html>

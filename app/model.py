@@ -61,7 +61,11 @@ class InputText(object):
         line_list = []
         for line in lines:
             if line.strip("\n").strip(" ") != "":
-                line = line.replace("'", '"')
+                line = line.replace("\n", ' ')
+                line = line.replace("\t", ' ')
+                line = line.replace("\\", ' ')
+                line = line.replace("\"", ' ')
+                line = line.replace("*", ' ')
                 line_list.append(line)
         return line_list
 
@@ -83,7 +87,7 @@ class Predictor(object):
         The first float is the probability of being tagged as 0.
         The Second float is the probability of being tagged as 1.
         The str is the orginal text.
-        :rtype: List[List[float, float, str]]
+        :rtype: Dictionary{str: List[List[float, float, str]]}
         """
         _input = self.sentence
         contract = InputText(_input)
@@ -97,4 +101,6 @@ class Predictor(object):
         result = []
         for i in range(len(sentence)):
             result.append([prob[i][0], prob[i][1], sentence[i]])
-        return result
+
+        body = {"result": result}
+        return body

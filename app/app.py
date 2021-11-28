@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 from model import Predictor
 from unit_test import UnitTest
 app = Flask(__name__)
@@ -16,7 +16,7 @@ def article():
 
 @app.route('/analysis', methods=['GET'])
 def analysis(text):
-    #print('input', text)
+    # print('input', text)
     return render_template('Analysis.html', article=text)
 
 
@@ -24,11 +24,12 @@ def analysis(text):
 def submit():
     if request.method == 'POST':
         res = request.form.get('text-to-detect')
-        # res = Predictor(res)
-        # res = res.predict()
-        # return analysis(res)
-        res = UnitTest()
-        return analysis(res.sentence_output)
+        # print(res)
+        res = Predictor(res)
+        res = res.predict()
+        return analysis(res)
+        # res = UnitTest()
+        # return analysis(res.sentence_output)
 
 
 if __name__ == '__main__':
