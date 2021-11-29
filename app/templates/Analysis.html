@@ -125,6 +125,15 @@
       transform: translate(0%, -0%);
       box-sizing: border-box;
     }
+    #rcorner {
+      border-radius: 100px;
+      border: 20px solid red;
+      width: 200px;
+      height: 200px;  
+      right: 10%;
+      margin-top: 50px;
+      position: absolute;
+    }
   </style>
 
   <div class="row">
@@ -138,6 +147,10 @@
         <p>Level of Filters (<output id="rangeValue">50%</output>)</p><br>
         <input type="range" id="myRange" value="50" min="0" max="100" step="10">
       </div>
+    </div>
+    <div id="rcorner" >
+      <p style="font-size:30px; color:black; text-align: center;">Risk</p>
+      <p id="risk" style="font-size:50px; color:black; text-align: center; bottom: 10%">0%</p>
     </div>
   </div>
   <div class="row">
@@ -177,8 +190,17 @@
     });
     var _article = JSON.parse('{{ article.result | tojson}}')
     var output = []
+    var risk = 0
+    var risk_count = 0
     for (let i = 0; i < _article.length; i++) {
+      temp_p = Math.round(_article[i][1] * 100)
+      risk += temp_p
+      risk_count += 1
       output.push(_article[i])
+    }
+    if (risk_count != 0){
+      risk = Math.round(risk / risk_count)
+      $('#risk').text(risk + '%');
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
