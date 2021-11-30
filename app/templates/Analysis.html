@@ -91,6 +91,8 @@
     } */
 
     .col #result {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 24px;
       color: black;
       width: 1000px;
       height: 500px;
@@ -100,7 +102,7 @@
       padding: 25px;
       border: 1px solid #2b2c2b;
       resize: none;
-      border-radius: 10px;
+      border-radius: 20px;
       -webkit-transform: translate(-50%, -50%);
       -moz-transform: translate(-50%, -50%);
       -o-transform: translate(-50%, -50%);
@@ -125,11 +127,12 @@
       transform: translate(0%, -0%);
       box-sizing: border-box;
     }
+
     #rcorner {
       border-radius: 100px;
-      border: 20px solid red;
+      border: 20px solid rgba(255, 81, 0, 0.719);
       width: 200px;
-      height: 200px;  
+      height: 200px;
       right: 10%;
       margin-top: 50px;
       position: absolute;
@@ -148,7 +151,7 @@
         <input type="range" id="myRange" value="50" min="0" max="100" step="10">
       </div>
     </div>
-    <div id="rcorner" >
+    <div id="rcorner">
       <p style="font-size:30px; color:black; text-align: center;">Risk</p>
       <p id="risk" style="font-size:50px; color:black; text-align: center; bottom: 10%">0%</p>
     </div>
@@ -192,13 +195,19 @@
     var output = []
     var risk = 0
     var risk_count = 0
+    var initialOutput = ""
     for (let i = 0; i < _article.length; i++) {
       temp_p = Math.round(_article[i][1] * 100)
       risk += temp_p
       risk_count += 1
+      if (temp_p >= 50) {
+        var tmp = " * " + _article[i][2] + "\n" + "\n";
+        initialOutput += tmp;
+      };
       output.push(_article[i])
     }
-    if (risk_count != 0){
+    $('#result').text(initialOutput);
+    if (risk_count != 0) {
       risk = Math.round(risk / risk_count)
       $('#risk').text(risk + '%');
     }
